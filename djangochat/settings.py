@@ -100,8 +100,8 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            # "hosts": [("127.0.0.1", 6379)],
-            "hosts": [("j690SMjT9dJAeNN57FsJ@containers-us-west-161.railway.app", 5549)],
+            "hosts": [("127.0.0.1", 6379)],
+            # "hosts": [("j690SMjT9dJAeNN57FsJ@containers-us-west-161.railway.app", 5549)],
         },
     },
 }
