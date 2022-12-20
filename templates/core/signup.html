@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Sign up | {% endblock %}
+
+{% block content %}
+<div class="">
+    <h1 class="">Sign up</h1>
+</div>
+
+<form method="post" action="." class="">
+    {% csrf_token %}
+
+    <div class="mx-4">
+        <label class="">Username</label>
+
+        <input type="text" name="username" class="form-control mx-4" style = "width:20rem;">
+    </div>
+
+    <div class="mx-4">
+        <label class="">Password</label>
+
+        <input type="password" name="password1" class="form-control mx-4" style = "width:20rem;">
+    </div>
+
+    <div class="mx-4">
+        <label class="">Repeat password</label>
+
+        <input type="password" name="password2" class="form-control mx-4" style = "width:20rem;">
+    </div>
+
+    {% if form.errors %}
+        {% for field in form %}
+            {% for error in field.errors %} 
+                <div class="">
+                    <p>{{ error|escape }}</p>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+
+    <button class="btn btn-primary mx-4 mt-4">Submit</button>
+</form>
+{% endblock %}

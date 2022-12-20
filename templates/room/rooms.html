@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Rooms | {% endblock %}
+
+{% block content %}
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="">Rooms</h1>
+</div>
+
+<div class="px-3 py-2">
+    <button type="button" class="btn btn-primary btn-lg px-4 gap-3"><a href="/rooms/createroom" class="nav-link">CreateRoom</a></button>
+</div>
+<div class="card-deck">
+    {% for room in rooms %}
+        <div class="card" style="width:18rem; margin:4rem;">
+            <div class="card-body">
+                <h2 class="card-title text-dark">{{ room.name }}</h2>
+
+                <button type="button" class="btn btn-primary btn-lg px-4 gap-3"><a href="{% url 'room' room.slug %}" class="nav-link">Join</a></button>
+                 
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
